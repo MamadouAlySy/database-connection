@@ -4,16 +4,18 @@ declare(strict_types=1);
 
 namespace MamadouAlySy\Contract;
 
+use MamadouAlySy\Exception\ConnectionException;
 use PDO;
 
-interface DatabaseConnectionContract
+interface ConnectionContract
 {
     /**
-     * Open a database connection
+     * Open a database connection and return a pdo instance
      *
-     * @return void
+     * @return PDO|null
+     * @throws ConnectionException
      */
-    public function open(): void;
+    public function open(): ?PDO;
 
     /**
      * Check if the connection is closed
@@ -21,13 +23,6 @@ interface DatabaseConnectionContract
      * @return boolean
      */
     public function isClosed(): bool;
-
-    /**
-     * Return the database connection
-     *
-     * @return PDO|null
-     */
-    public function getConnection(): ?PDO;
 
     /**
      * Close the database connection

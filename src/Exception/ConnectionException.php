@@ -6,7 +6,7 @@ namespace MamadouAlySy\Exception;
 
 use Exception;
 
-class DatabaseConnectionException extends Exception
+class ConnectionException extends Exception
 {
     
 }

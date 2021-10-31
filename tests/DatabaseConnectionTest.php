@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 namespace MamadouAlySy\Tests;
 
-use MamadouAlySy\Contract\DatabaseConnectionContract;
-use MamadouAlySy\DatabaseConnection;
-use MamadouAlySy\Exception\DatabaseConnectionException;
+use MamadouAlySy\Contract\ConnectionContract;
+use MamadouAlySy\Connection;
+use MamadouAlySy\Exception\ConnectionException;
 use PHPUnit\Framework\TestCase;
 
 class DatabaseConnectionTest extends TestCase
 {
-    protected DatabaseConnectionContract $databaseConnection;
+    protected ConnectionContract $databaseConnection;
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->databaseConnection = new DatabaseConnection([
+        $this->databaseConnection = new Connection([
             'dsn' => 'sqlite:sqlite.db',
             'user' => null,
             'password' => null
         ]);
     }
-    
+
 
     public function testCanOpenAConnection()
     {
@@ -32,9 +32,9 @@ class DatabaseConnectionTest extends TestCase
 
     public function testWillThrowAnException()
     {
-        $this->expectException(DatabaseConnectionException::class);
-        $this->databaseConnection = new DatabaseConnection([
-            'dsn' => 'sdfgjkds',
+        $this->expectException(ConnectionException::class);
+        $this->databaseConnection = new Connection([
+            'dsn' => 'unknown',
             'user' => null,
             'password' => null
         ]);
