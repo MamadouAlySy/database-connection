@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MamadouAlySy\Contract;
+namespace MamadouAlySy\Interfaces;
 
 use MamadouAlySy\Exception\ConnectionException;
 use PDO;
 
-interface ConnectionContract
+interface ConnectionInterface
 {
     /**
      * Open a database connection and return a pdo instance
