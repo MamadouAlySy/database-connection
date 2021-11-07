@@ -9,7 +9,7 @@ use MamadouAlySy\Connection;
 use MamadouAlySy\Exception\ConnectionException;
 use PHPUnit\Framework\TestCase;
 
-class DatabaseConnectionTest extends TestCase
+class ConnectionTest extends TestCase
 {
     protected ConnectionContract $databaseConnection;
 
@@ -22,7 +22,6 @@ class DatabaseConnectionTest extends TestCase
             'password' => null
         ]);
     }
-
 
     public function testCanOpenAConnection()
     {
