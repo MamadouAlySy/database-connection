@@ -5,21 +5,19 @@ declare(strict_types=1);
 namespace MamadouAlySy;
 
 use Exception;
-use MamadouAlySy\Contract\ConnectionContract;
 use MamadouAlySy\Exception\ConnectionException;
+use MamadouAlySy\Interfaces\ConnectionInterface;
 use PDO;
 
-class Connection implements ConnectionContract
+class Connection implements ConnectionInterface
 {
     protected ?PDO $pdoInstance = null;
-    protected array $credentials = [];
-    protected array $options = [];
 
-    public function __construct(array $credentials = [], array $options = [])
-    {
-        $this->credentials = $credentials;
-        $this->options = $options;
-    }
+
+    public function __construct(
+        protected array $credentials = [],
+        protected array $options = []
+    ) { }
 
     /**
      * @inheritDoc

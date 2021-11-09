@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace MamadouAlySy\Tests;
 
-use MamadouAlySy\Contract\ConnectionContract;
+use MamadouAlySy\Interfaces\ConnectionInterface;
 use MamadouAlySy\Connection;
 use MamadouAlySy\Exception\ConnectionException;
 use PHPUnit\Framework\TestCase;
 
-class DatabaseConnectionTest extends TestCase
+class ConnectionTest extends TestCase
 {
-    protected ConnectionContract $databaseConnection;
+    protected ConnectionInterface $databaseConnection;
 
     protected function setUp(): void
     {
@@ -22,7 +22,6 @@ class DatabaseConnectionTest extends TestCase
             'password' => null
         ]);
     }
-
 
     public function testCanOpenAConnection()
     {

@@ -8,6 +8,11 @@
             "MamadouAlySy\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "MamadouAlySy\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Mamadou Aly Sy",
@@ -15,7 +20,10 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "php": "8.*",
+        "ext-pdo": "*"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     }
