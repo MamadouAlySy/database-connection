@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare ( strict_types = 1 );
 
 namespace MamadouAlySy;
 
@@ -11,20 +11,20 @@ use PDO;
 
 class Connection implements ConnectionInterface
 {
-    protected ?PDO $pdoInstance = null;
-
+    protected  ? PDO $pdoInstance = null;
 
     public function __construct(
         protected array $credentials = [],
         protected array $options = []
-    ) { }
+    ) {}
 
     /**
      * @inheritDoc
      */
-    public function open(): PDO
+    public function open() : PDO
     {
-        if ($this->isClosed()) {
+
+        if ( $this->isClosed() ) {
             try {
                 $this->pdoInstance = new PDO(
                     $this->credentials['dsn'],
@@ -32,9 +32,10 @@ class Connection implements ConnectionInterface
                     $this->credentials['password'],
                     $this->options
                 );
-            } catch (Exception $e) {
-                throw new ConnectionException($e->getMessage(), (int) $e->getCode());
+            } catch ( Exception $e ) {
+                throw new ConnectionException( $e->getMessage(), (int) $e->getCode() );
             }
+
         }
 
         return $this->pdoInstance;
@@ -45,7 +46,7 @@ class Connection implements ConnectionInterface
      */
     public function isClosed(): bool
     {
-        return is_null($this->pdoInstance);
+        return is_null( $this->pdoInstance );
     }
 
     /**
@@ -55,4 +56,5 @@ class Connection implements ConnectionInterface
     {
         $this->pdoInstance = null;
     }
+
 }
