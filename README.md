@@ -17,8 +17,6 @@ require_once './vendor/autoload.php';
 
 $credentials = [
     'dsn' => 'sqlite:sqlite.db',
-    'user' => null,
-    'password' => null
 ];
 
 $connection = new \MamadouAlySy\Connection($credentials);

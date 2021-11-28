@@ -28,8 +28,8 @@ class Connection implements ConnectionInterface
             try {
                 $this->pdoInstance = new PDO(
                     $this->credentials['dsn'],
-                    $this->credentials['user'],
-                    $this->credentials['password'],
+                    $this->credentials['user'] ?? null,
+                    $this->credentials['password'] ?? null,
                     $this->options
                 );
             } catch (Exception $e) {
