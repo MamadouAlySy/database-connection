@@ -3,6 +3,9 @@
     "description": "A simple php database connection class",
     "type": "library",
     "license": "MIT",
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
+    },
     "autoload": {
         "psr-4": {
             "MamadouAlySy\\": "src/"
