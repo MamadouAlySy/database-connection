@@ -2,6 +2,10 @@
 
 A simple php Database connection class
 
+## Requirements
+- php >= 8.0
+- php-sqlite *
+
 ## Installation
 
 ```bash
@@ -15,9 +19,8 @@ A simple php Database connection class
 
 require_once './vendor/autoload.php';
 
-$credentials = [
-    'dsn' => 'sqlite:sqlite.db',
-];
+// only the dsn is required if there is no username or password you dont need to specify them
+$credentials = ['dsn' => 'sqlite:sqlite.db'];
 
 $connection = new \MamadouAlySy\Connection($credentials);
 

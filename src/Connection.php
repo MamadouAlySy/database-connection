@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace MamadouAlySy;
 
@@ -11,18 +11,15 @@ use PDO;
 
 class Connection implements ConnectionInterface
 {
-    protected ?PDO $pdoInstance = null;
+    protected  ? PDO $pdoInstance = null;
 
-
-    public function __construct(
-        protected array $credentials = [],
-        protected array $options = []
-    ) { }
+    public function __construct(protected array $credentials = [], protected array $options = [])
+    {}
 
     /**
      * @inheritDoc
      */
-    public function open(): PDO
+    public function open() : PDO
     {
         if ($this->isClosed()) {
             try {
