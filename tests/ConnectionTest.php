@@ -18,9 +18,7 @@ class ConnectionTest extends TestCase
         parent::setUp();
         $this->databaseConnection = new Connection( [
             'dsn' => 'sqlite:sqlite.db',
-            'user' => null,
-            'password' => null,
-        ] );
+        ]);
     }
 
     public function testCanOpenAConnection()
@@ -34,9 +32,7 @@ class ConnectionTest extends TestCase
         $this->expectException( ConnectionException::class );
         $this->databaseConnection = new Connection( [
             'dsn' => 'unknown',
-            'user' => null,
-            'password' => null,
-        ] );
+        ]);
         $this->databaseConnection->open();
     }
 }
