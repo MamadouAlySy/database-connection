@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare (strict_types=1);
 
 namespace MamadouAlySy\Interfaces;
 
@@ -11,7 +11,6 @@ interface ConnectionInterface
 {
     /**
      * Open a database connection and return a PDO instance
-     * if the coneection successfull
      *
      * @return PDO|null
      * @throws ConnectionException

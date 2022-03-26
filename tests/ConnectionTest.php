@@ -15,24 +15,25 @@ class ConnectionTest extends TestCase
 
     protected function setUp(): void
     {
-        parent::setUp();
-        $this->databaseConnection = new Connection( [
-            'dsn' => 'sqlite:sqlite.db',
-        ]);
+        $this->databaseConnection = new Connection(['dsn' => 'sqlite:sqlite.db']);
     }
 
-    public function testCanOpenAConnection()
+    /**
+     * @test
+     */
+    public function it_can_open_a_new_connection()
     {
         $this->databaseConnection->open();
-        $this->assertFalse( $this->databaseConnection->isClosed() );
+        $this->assertFalse($this->databaseConnection->isClosed());
     }
 
-    public function testWillThrowAnException()
+    /**
+     * @test
+     */
+    public function it_will_throw_an_exception()
     {
-        $this->expectException( ConnectionException::class );
-        $this->databaseConnection = new Connection( [
-            'dsn' => 'unknown',
-        ]);
+        $this->expectException(ConnectionException::class);
+        $this->databaseConnection = new Connection(['dsn' => 'unknown']);
         $this->databaseConnection->open();
     }
 }
