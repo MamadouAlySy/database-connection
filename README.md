@@ -3,7 +3,7 @@
 A simple php Database connection class
 
 ## Requirements
-- php >= 8.0
+- php >= 8.1
 - php-sqlite *
 
 ## Installation
