@@ -2,9 +2,9 @@
 
 declare (strict_types=1);
 
-namespace MamadouAlySy\Interfaces;
+namespace MamadouAlySy\Database\Interfaces;
 
-use MamadouAlySy\Exception\ConnectionException;
+use MamadouAlySy\Database\Exception\ConnectionException;
 use PDO;
 
 interface ConnectionInterface

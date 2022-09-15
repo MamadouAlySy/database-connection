@@ -2,7 +2,7 @@
 
 declare (strict_types=1);
 
-namespace MamadouAlySy\Exception;
+namespace MamadouAlySy\Database\Exception;
 
 use Exception;
 
