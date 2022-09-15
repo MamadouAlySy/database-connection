@@ -2,11 +2,11 @@
 
 declare ( strict_types = 1 );
 
-namespace MamadouAlySy\Tests;
+namespace MamadouAlySy\Database\Tests;
 
-use MamadouAlySy\Connection;
-use MamadouAlySy\Exception\ConnectionException;
-use MamadouAlySy\Interfaces\ConnectionInterface;
+use MamadouAlySy\Database\Connection;
+use MamadouAlySy\Database\Exception\ConnectionException;
+use MamadouAlySy\Database\Interfaces\ConnectionInterface;
 use PHPUnit\Framework\TestCase;
 
 class ConnectionTest extends TestCase

@@ -22,7 +22,7 @@ require_once './vendor/autoload.php';
 // only the dsn is required if there is no username or password you dont need to specify them
 $credentials = ['dsn' => 'sqlite:sqlite.db'];
 
-$connection = new \MamadouAlySy\Connection($credentials);
+$connection = new \MamadouAlySy\Database\Connection($credentials);
 
 // open a the connection
 $connection->open(); // returns PDO instance

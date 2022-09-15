@@ -8,12 +8,12 @@
     },
     "autoload": {
         "psr-4": {
-            "MamadouAlySy\\": "src/"
+            "MamadouAlySy\\Database\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MamadouAlySy\\Tests\\": "tests/"
+            "MamadouAlySy\\Database\\Tests\\": "tests/"
         }
     },
     "authors": [
